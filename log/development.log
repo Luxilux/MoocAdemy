@@ -1,0 +1,256 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (100.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (102.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLessons (20180725171720)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tile_lesson" varchar, "body" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725171720_create_lessons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725171720"]]
+  ↳ bin/rails:9
+  [1m[35m (82.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateCours (20180725171849)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "cours" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tile_cour" varchar, "description" varchar, "lessons_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725171849_create_cours.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_cours_on_lessons_id" ON "cours" ("lessons_id")[0m
+  ↳ db/migrate/20180725171849_create_cours.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725171849"]]
+  ↳ bin/rails:9
+  [1m[35m (85.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-25 17:30:27.742874"], ["updated_at", "2018-07-25 17:30:27.742874"]]
+  ↳ bin/rails:9
+  [1m[35m (147.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (0.3ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "For Whom the Bell Tolls"], ["description", "Tarpaulin Sky Press"], ["created_at", "2018-07-25 17:39:00.867249"], ["updated_at", "2018-07-25 17:39:00.867249"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (95.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (1.1ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "Butter In a Lordly Dish"], ["description", "Packt Publishing"], ["created_at", "2018-07-25 17:39:00.968111"], ["updated_at", "2018-07-25 17:39:00.968111"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (91.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "Stranger in a Strange Land"], ["description", "Gefen Publishing House"], ["created_at", "2018-07-25 17:39:01.066607"], ["updated_at", "2018-07-25 17:39:01.066607"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (92.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "This Lime Tree Bower"], ["description", "Allen Ltd"], ["created_at", "2018-07-25 17:39:01.167245"], ["updated_at", "2018-07-25 17:39:01.167245"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (157.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (1.1ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "Blood's a Rover"], ["description", "Burns & Oates"], ["created_at", "2018-07-25 17:39:01.333161"], ["updated_at", "2018-07-25 17:39:01.333161"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (91.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "A Darkling Plain"], ["description", "Caister Academic Press"], ["created_at", "2018-07-25 17:39:01.432334"], ["updated_at", "2018-07-25 17:39:01.432334"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (92.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "East of Eden"], ["description", "Reed Publishing"], ["created_at", "2018-07-25 17:39:01.531547"], ["updated_at", "2018-07-25 17:39:01.531547"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (77.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (0.5ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "The House of Mirth"], ["description", "Ace Books"], ["created_at", "2018-07-25 17:39:01.615433"], ["updated_at", "2018-07-25 17:39:01.615433"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (68.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (1.3ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "Things Fall Apart"], ["description", "Central European University Press"], ["created_at", "2018-07-25 17:39:01.690349"], ["updated_at", "2018-07-25 17:39:01.690349"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (87.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCour Create (1.3ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "O Pioneers!"], ["description", "Marshall Pickering"], ["created_at", "2018-07-25 17:39:01.786217"], ["updated_at", "2018-07-25 17:39:01.786217"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (91.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.3ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "All Passion Spent"], ["description", "Open University Press"], ["created_at", "2018-07-25 17:48:27.513041"], ["updated_at", "2018-07-25 17:48:27.513041"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (75.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "Great Work of Time"], ["description", "University of Akron Press"], ["created_at", "2018-07-25 17:48:27.593123"], ["updated_at", "2018-07-25 17:48:27.593123"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (92.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.4ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "The Daffodil Sky"], ["description", "Golden Cockerel Press"], ["created_at", "2018-07-25 17:48:27.692899"], ["updated_at", "2018-07-25 17:48:27.692899"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (101.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.4ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "In Death Ground"], ["description", "Lion Hudson"], ["created_at", "2018-07-25 17:48:27.804060"], ["updated_at", "2018-07-25 17:48:27.804060"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (101.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.2ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "This Side of Paradise"], ["description", "Lethe Press"], ["created_at", "2018-07-25 17:48:27.913779"], ["updated_at", "2018-07-25 17:48:27.913779"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (91.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.4ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "Mr Standfast"], ["description", "Happy House"], ["created_at", "2018-07-25 17:48:28.013460"], ["updated_at", "2018-07-25 17:48:28.013460"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (91.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.2ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "The Proper Study"], ["description", "Anvil Press Poetry"], ["created_at", "2018-07-25 17:48:28.113877"], ["updated_at", "2018-07-25 17:48:28.113877"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (87.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.1ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "The Mermaids Singing"], ["description", "Bloomsbury Publishing Plc"], ["created_at", "2018-07-25 17:48:28.209722"], ["updated_at", "2018-07-25 17:48:28.209722"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (106.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.4ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "Shall not Perish"], ["description", "Bella Books"], ["created_at", "2018-07-25 17:48:28.324172"], ["updated_at", "2018-07-25 17:48:28.324172"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (90.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.6ms)[0m  [1m[32mINSERT INTO "cours" ("tile_cour", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tile_cour", "Dying of the Light"], ["description", "Fearless Books"], ["created_at", "2018-07-25 17:48:28.424671"], ["updated_at", "2018-07-25 17:48:28.424671"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (84.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
