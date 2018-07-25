@@ -1,6 +1,6 @@
 # README
 <a href = https://github.com/Luxilux/MoocAdemy/blob/master/README.md#explications> Explications<a/> <br>
-<a href = > Résultats<a/>
+<a href = https://github.com/Luxilux/MoocAdemy/blob/master/README.md#r%C3%A9sulat> Résultats<a/>
 
 # BDD MoocAdemy
 
