@@ -1,24 +1,16 @@
 # README
+<a href = https://github.com/Luxilux/Hacking-News/blob/master/README.md#explications> Explications<a/> <br>
+<a href = https://github.com/Luxilux/Hacking-News/blob/master/README.md#r%C3%A9sulat> Résultats<a/>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# BDD MoocAdemy
 
-Things you may want to cover:
+# Explications 
+Création d'une plateforme d'apprentissage en ligne. Il y a plein de cours. Chaque cours a un titre et une description. Enfin, chaque cours a plusieurs leçons, qui ont un titre et un body
+Les différentes tabs sont : 
+* Cour
+* Lesson
 
-* Ruby version
+Remarque :  Le contenu de cette BDD ne contient que des datas qui ont été crée à  l'aide de la gem 'Faker'
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Résulat
+Le programme affiche la BDD et ses déffiréntes relations.
